@@ -1,4 +1,4 @@
-# 6.00.2x Problem Set 2: Simulating robots
+# 6.00.2x Problem Set 2: Simulating robots (98%)
 import time
 import math
 import random
