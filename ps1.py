@@ -1,5 +1,5 @@
 ###########################
-# 6.00.2x Problem Set 1: Space Cows 
+# 6.00.2x Problem Set 1: Space Cows (96%)
 
 from ps1_partition import get_partitions
 import time
