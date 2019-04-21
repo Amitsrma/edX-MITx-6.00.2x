@@ -1,0 +1,97 @@
+#79% in average
+
+#Problem 3
+#20.0/20.0 points (graded)
+#You are creating a song playlist for your next party.
+def song_playlist(songs, max_size):
+    """
+    songs: list of tuples, ('song_name', song_len, song_size)
+    max_size: float, maximum size of total songs that you can fit
+
+    Start with the song first in the 'songs' list, then pick the next 
+    song to be the one with the lowest file size not already picked, repeat
+
+    Returns: a list of a subset of songs fitting in 'max_size' in the order 
+             in which they were chosen.
+    """
+    if songs[0][2] > max_size:
+        return []
+    final,size = [songs[0][0]],[]
+    ms = songs[0][2]
+    for i in songs[1:]:
+        size.append(i[2])
+    try:
+        minimum = min(size)
+        Asongs = songs[1:]
+        for i in range(len(songs)):
+            if ms + minimum > max_size:
+                break
+            index = size.index(minimum)
+            check = 0
+    #        print(size, ms, minimum)
+            while check < len(Asongs):
+                if Asongs[check][2] == minimum and ms + minimum <= max_size:
+                    ms += Asongs[check][2]
+                    final.append(Asongs[check][0])
+                    break
+                check += 1
+            size.remove(size[index])
+            Asongs.remove(Asongs[index])
+    #        if size == []:
+    #            break
+            minimum = min(size)
+        return final
+    except:
+        return final
+
+
+#Problem 4
+#15.0/15.0 points (graded)
+def greedySum(L, s):
+    """ input: s, positive integer, what the sum should add up to
+               L, list of unique positive integers sorted in descending order
+        Use the greedy approach where you find the largest multiplier for 
+        the largest value in L then for the second largest, and so on to 
+        solve the equation s = L[0]*m_0 + L[1]*m_1 + ... + L[n-1]*m_(n-1)
+        return: the sum of the multipliers or "no solution" if greedy approach does 
+                not yield a set of multipliers such that the equation sums to 's'
+    """
+    if L == []:
+        return 'no solution'
+    multipliers = []
+#    l = max(L)
+    lis = L.copy()
+    sums=s
+    for i in L:
+        
+        if sums/i >= 1:
+#            lis.remove(l)
+            multipliers.append(sums//i)
+            sums -= i * (sums//i)
+
+#            if lis == []:
+#                break
+#            l = max(lis)
+    if sums == 0:
+        return sum(multipliers)
+    else:
+        return 'no solution'
+
+
+#Problem 5-2
+#20.0/20.0 points (graded)
+# Paste your code here
+def max_contig_sum(L):
+    """ L, a list of integers, at least one positive
+    Returns the maximum sum of a contiguous subsequence in L """
+    #YOUR CODE HERE
+    sums = []
+    for i in range(len(L)+1):
+        
+        for j in range(len(L)+1):
+            
+            sums.append(sum(L[i:j]))
+            
+    return max(sums)
+
+#seems like I got low here because I didnot attempt any of problem 7!!
