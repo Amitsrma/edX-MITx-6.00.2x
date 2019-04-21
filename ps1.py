@@ -166,59 +166,7 @@ def brute_force_cow_transport(cows,limit=10):
                     count += 1
                 if count == len(atrip):
                     return atrip
-                
-    
-#    
-#        countcows,limitCheck, countPartn = 0,0,0
-#        for cow in partition:
-#            print('\n', partition)
-#            try:
-#                if limitCheck + cows[cow] <= limit:
-#                    limitCheck += cows[cow]
-#                    countcows += 1
-#                if countcows == len(cow):
-#                    countPartn += 1
-#                
-#            except:
-#                limitCheck = 0
-#                countcows = 0
-#                
-#                for acow in cow:
-#                    if limitCheck + cows[acow] <= limit:
-#                        
-#                        limitCheck += cows[acow]
-#                        countcows += 1
-#                    if countcows == len(cow):
-#                        countPartn += 1
-#        if countPartn == len(partition):
-#            return partition
-                        
 
-#    indx = 1
-##    weight = {}
-##    partnNames = {}
-#    len1 = len(cows.keys())
-#    for i in partn:
-#
-#        for j in i:
-#            wt = 0
-#            for k in j:
-#                wt += cows[k]
-#            if wt > limit:
-#                break
-#        if wt < limit:
-##            partnNames['Partition '+str(indx)] = i
-##            weight['Partition '+str(indx)] = len(i)
-#            if len(i) <= len1:
-#                len1 = len(i)
-#                result = i
-#        indx += 1
-        
-    
-#    return result
-    
-
-        
 # Problem 3
 def compare_cow_transport_algorithms():
     """
