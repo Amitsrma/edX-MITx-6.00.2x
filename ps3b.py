@@ -1,4 +1,4 @@
-# Problem Set 3: Simulating the Spread of Disease and Virus Population Dynamics 
+# Problem Set 3: Simulating the Spread of Disease and Virus Population Dynamics (69%)
 
 import random
 import pylab
